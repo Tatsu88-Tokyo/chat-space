@@ -7,54 +7,48 @@
 
 .contents{
   display:block;
-}
+  &__side{
+    color: $main;
+    float: left;
+    display:block;
+    width: 300px;
 
-.contents__side{
-  color: $main;
-  float: left;
-  display:block;
-  width: 300px;
-}
+    &__index__box{
+      background-color: #253141;
+      padding-top:35px;
+      padding-bottom: 15px;
+      padding:0 20px;
+      height: 100px;
+      line-height:100px;
+      display:flex;
+      justify-content: space-between;
 
-.contents__side__index__box{
-  background-color: #253141;
-  padding-top:35px;
-  padding-bottom: 15px;
-  padding:0 20px;
-  height: 100px;
-  line-height:100px;
-  display:flex;
-  justify-content: space-between;
-}
-
-.contents__side__index__box__name{
-  font-size: 16px;
-  font-weight: bold;
-}
+      &__name{
+        font-size: 16px;
+        font-weight: bold;
+}}}}
 
 .contents__side__index__box__menu{
   display:flex;
 }
 
-.contents__side__index__box__menu__new{
-  
-}
 
 .contents__side__group{
   background-color: #2f3e51;
   padding:20px 20px 0;
   height: calc(100vh - 100px);
   display:block;
-}
 
-.contents__side__group h1.group{
-  font-size: 15px;
-  font-family: bold;
-}
-.contents__side__group p.message{
-  font-size: 11px;
-  font-family: bold;
-  padding-bottom: 40px;
+  h1.group{
+    font-size: 15px;
+    font-family: bold;
+  } 
+  
+  p.message{
+    font-size: 11px;
+    font-family: bold;
+    padding-bottom: 40px;
+  }
 }
 
 .contents__main{
@@ -74,16 +68,18 @@
   padding: 46px 40px;
   background-color: #fafafa;
 }
-.contents__index h1.group{
-  font-size: 20px;
-  color: #333333;
-  padding:35px 0 15px 0;
+.contents__index{ 
+  h1.group{
+    font-size: 20px;
+    color: #333333;
+    padding:35px 0 15px 0;
+}
+  p.member{
+    font-size: 12px;
+    color: #999999;
+}
 }
 
-.contents__index p.member{
-  font-size: 12px;
-  color: #999999;
-}
 .contents__edit{
  color: $btn-pop;
  height: 40px;
@@ -98,18 +94,18 @@
 .message__info{
   display:flex;
   margin-bottom: 10px;
+  
+  p.user{
+    color:#434A54;
+    font-size: 16px;
+    font-weight:bold;
 }
 
-.message__info p.user{
-  color:#434A54;
-  font-size: 16px;
-  font-weight:bold;
+  p.date{
+    color:#999999;
+    font-size: 12px;
+    margin-left: 10px;
 }
-
-.message__info p.date{
-  color:#999999;
-  font-size: 12px;
-  margin-left: 10px;
 }
 
 .contents__form{ 
@@ -142,10 +138,10 @@
   right:10px;
   margin:0;
   padding:0;
-}
 
-.input-box__image__file{
-  display:none;
+  &__file{
+    display:none;
+}
 }
 
 
