@@ -1,0 +1,156 @@
+.header{
+  background-color:$btn-pop;
+  text-align: center;
+  color: $main;
+  display:block;
+}
+
+.contents{
+  display:block;
+  &__side{
+    color: $main;
+    float: left;
+    display:block;
+    width: 300px;
+
+    &__index__box{
+      background-color: #253141;
+      padding-top:35px;
+      padding-bottom: 15px;
+      padding:0 20px;
+      height: 100px;
+      line-height:100px;
+      display:flex;
+      justify-content: space-between;
+
+      &__name{
+        font-size: 16px;
+        font-weight: bold;
+}}}}
+
+.contents__side__index__box__menu{
+  display:flex;
+}
+
+
+.contents__side__group{
+  background-color: #2f3e51;
+  padding:20px 20px 0;
+  height: calc(100vh - 100px);
+  display:block;
+
+  h1.group{
+    font-size: 15px;
+    font-family: bold;
+  } 
+  
+  p.message{
+    font-size: 11px;
+    font-family: bold;
+    padding-bottom: 40px;
+  }
+}
+
+.contents__main{
+  width: calc(100vw - 300px);
+  float: left;
+  border-bottom: solid 1px #eee;
+  display:block;
+}
+
+.contents__top{
+  height: 100px;
+  padding:0 40px;
+  display:flex;
+}
+.contents__messages{
+  height: calc(100vh - 303px);
+  padding: 46px 40px;
+  background-color: #fafafa;
+}
+.contents__index{ 
+  h1.group{
+    font-size: 20px;
+    color: #333333;
+    padding:35px 0 15px 0;
+}
+  p.member{
+    font-size: 12px;
+    color: #999999;
+}
+}
+
+.contents__edit{
+ color: $btn-pop;
+ height: 40px;
+ line-height: 40px;
+ margin-top: 30px;
+ padding:0 20px;
+ border:solid 1px $btn-pop;
+ position: absolute;
+ right: 40px;
+}
+  
+.message__info{
+  display:flex;
+  margin-bottom: 10px;
+  
+  p.user{
+    color:#434A54;
+    font-size: 16px;
+    font-weight:bold;
+}
+
+  p.date{
+    color:#999999;
+    font-size: 12px;
+    margin-left: 10px;
+}
+}
+
+.contents__form{ 
+  height: 90px;
+  background-color: #DDD;
+  padding:20px 40px;
+}
+
+.new__message{
+  display:flex;
+}
+
+.input-box{
+  position: relative;
+  width:100%;
+}
+
+.input-box__text{
+  height: 50px;
+  width: 100%;
+  padding: 0 10px 0 10px;
+  color: #434a54;
+  border-style: none;
+  box-sizing: border-box;
+}
+
+.input-box__image{
+  position:absolute;
+  top:15px;
+  right:10px;
+  margin:0;
+  padding:0;
+
+  &__file{
+    display:none;
+}
+}
+
+
+.submit__btn{
+  width: 100px;
+  height: 50px;
+  padding: 0 30px;
+  margin-left:15px;
+  background-color:$btn-pop;
+  color: $main;
+}
+
