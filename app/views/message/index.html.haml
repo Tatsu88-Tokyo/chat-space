@@ -1,17 +1,16 @@
-.header
-  グループを作成しました
 .contents
   .contents__side
     .contents__side__index
       .contents__side__index__box
         .contents__side__index__box__name
-          %p.name test
+          %p.name  
+            = current_user.name
         .contents__side__index__box__menu
           .contents__side__index__box__menu__new  
-            = link_to ("/message/index") do
+            = link_to do
               %i.fa.fa-edit 
           .contents__side__index__box__menu__edit
-            = link_to ("/message/index") do
+            = link_to edit_user_path(current_user) do
               %i.fa.fa-cog
     .contents__side__group
       %h1.group sample group
