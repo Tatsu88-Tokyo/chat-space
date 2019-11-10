@@ -62,15 +62,19 @@
   background-color: #fafafa;
 }
 .contents__index{ 
-  h1.group{
+  .group{
     font-size: 20px;
     color: #333333;
     padding:35px 0 15px 0;
 }
-  p.member{
+  .member{
     font-size: 12px;
     color: #999999;
 }
+}
+
+.facolor{
+  color: white;
 }
 
 .contents__edit{

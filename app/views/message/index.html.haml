@@ -7,15 +7,15 @@
             = current_user.name
         .contents__side__index__box__menu
           .contents__side__index__box__menu__new  
-            = link_to new_group_path do
+            = link_to new_group_path, class: "facolor" do
               %i.fa.fa-edit 
           .contents__side__index__box__menu__edit
-            = link_to edit_user_path(current_user) do
+            = link_to edit_user_path(current_user), class: "facolor" do
               %i.fa.fa-cog
     .contents__side__group
-      %h1.group sample group
+      %p.group sample group
       %p.message hello!
-      %h1.group example
+      %p.group example
       %p.message まだメッセージがありません。
   .contents__main
     .contents__top
