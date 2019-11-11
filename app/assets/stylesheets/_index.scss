@@ -32,16 +32,19 @@
   height: calc(100vh - 100px);
   display:block;
 
-  h1.group{
+  .group__name{
     font-size: 15px;
     font-family: bold;
+    color:white;
   } 
   
-  p.message{
+  .group__message{
     font-size: 11px;
     font-family: bold;
     padding-bottom: 40px;
+    color:white;
   }
+
 }
 
 .contents__main{
