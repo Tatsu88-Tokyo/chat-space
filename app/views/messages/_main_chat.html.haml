@@ -1,0 +1,40 @@
+.contents__main
+  .contents__top
+    .contents__index
+      %h1.group sample group
+      %p.member Member:test
+    .contents__edit
+      Edit
+  .contents__messages
+    .message
+      .message__info
+        %p.user test-user 
+        %p.date 2019/11/04(Mon) 18:00:00
+      .message__text
+        %p.text こんにちは！
+  .form
+    = form_for [@group, @message] do |f|
+      = f.text_field :content, class: 'form__message', placeholder: 'type a message'
+      .form__mask
+        = f.label :image, class: 'form__mask__image' do
+          %i.fa.fa-image
+          = f.file_field :image, class: 'hidden'
+      = f.submit 'Send', class: 'form__submit'
+
+    -#     .contents__form
+    -# = form_for [@group, @message] do |f|
+    -#   =f.text_field :content, class: 'input-box__text', placeholder: 'type a message'
+    -#   .input-box__image
+    -#     =f.label :image, class:'input-box__image__file' do
+    -#       %i.fa.fa-image
+    -#       = f.file_field :image, class: 'hidden'
+    -#   = f.submit 'Send', class: 'submit__btn'
+
+    -#   .contents__form
+    -# %form.new__message
+    -#   .input-box
+    -#     %input.input-box__text{placeholder:"type a message"}
+    -#     %label.input-box__image
+    -#       %i.fa.fa-image
+    -#       %input.input-box__image__file{type:"file"}
+    -#   %input.submit__btn{type:"submit", value:"send"}
