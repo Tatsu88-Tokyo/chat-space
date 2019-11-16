@@ -65,15 +65,17 @@
   box-sizing:border-box;
 }
 .contents__index{ 
+  margin-top:35px;
+
   .group{
     font-size: 20px;
     color: #333333;
-    margin-top:35px;
+    margin-bottom:15px;
 }
-  .member{
+  .member-list{
     font-size: 12px;
     color: #999999;
-    margin-top:15px;
+    display:flex;
 }
 }
 
@@ -91,22 +93,36 @@
  position: absolute;
  right: 40px;
 }
-  
-.message__info{
-  display:flex;
-  margin-bottom: 10px;
-  
-  p.user{
-    color:#434A54;
-    font-size: 16px;
-    font-weight:bold;
+
+.edit{
+  color: $btn-pop;
+  text-decoration: none;
 }
 
-  p.date{
-    color:#999999;
-    font-size: 12px;
-    margin-left: 10px;
-}
+.message{
+  margin-bottom: 40px;
+  
+  .upper-message{
+    display:flex;
+    margin-bottom: 10px;
+      &__username{
+        color:#434A54;
+        font-size: 16px;
+        font-weight:bold;
+      }
+      &__date{
+        color:#999999;
+        font-size: 12px;
+        margin-left: 10px;
+      }
+  }
+  .lower-message{
+    color:#434A54;
+    font-size: 14px;
+    margin-bottom: 10px;
+  }
+
+
 }
 
 .form{ 
