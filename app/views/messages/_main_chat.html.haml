@@ -1,17 +1,19 @@
 .contents__main
   .contents__top
     .contents__index
-      %h1.group sample group
-      %p.member Member:test
+      %h1.group
+        = @group.name
+      %ul.member-list
+        Member:
+        %li.member-list__member
+          - @members.each do |member|
+            %li= member.name
     .contents__edit
-      Edit
+      = link_to 'Edit',edit_group_path(@group),class: "edit"
   .contents__messages
-    .message
-      .message__info
-        %p.user test-user 
-        %p.date 2019/11/04(Mon) 18:00:00
-      .message__text
-        %p.text こんにちは！
+    .messages
+      = render @messages
+
   .form
     = form_for [@group, @message] do |f|
       = f.text_field :content, class: 'form__message', placeholder: 'type a message'
@@ -20,21 +22,3 @@
           %i.fa.fa-image
           = f.file_field :image, class: 'hidden'
       = f.submit 'Send', class: 'form__submit'
-
-    -#     .contents__form
-    -# = form_for [@group, @message] do |f|
-    -#   =f.text_field :content, class: 'input-box__text', placeholder: 'type a message'
-    -#   .input-box__image
-    -#     =f.label :image, class:'input-box__image__file' do
-    -#       %i.fa.fa-image
-    -#       = f.file_field :image, class: 'hidden'
-    -#   = f.submit 'Send', class: 'submit__btn'
-
-    -#   .contents__form
-    -# %form.new__message
-    -#   .input-box
-    -#     %input.input-box__text{placeholder:"type a message"}
-    -#     %label.input-box__image
-    -#       %i.fa.fa-image
-    -#       %input.input-box__image__file{type:"file"}
-    -#   %input.submit__btn{type:"submit", value:"send"}
