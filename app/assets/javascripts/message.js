@@ -1,40 +1,27 @@
 $(function(){
 
   function buildHTML(message){
-    if (message.image) {
-      let html = `<div class="message">
-                 <div class="upper-message">
-                 <div class="upper-message__user-name">
-                  ${message.name}
-                 </div>
-                 <div class="upper-message__date">
-                 ${message.created_at}
-                 </div>
-                 </div>
-                 <div class="lower-message">
-                 <img class="lower-message__image" src=${message.image} alt="7a1e30c5 c428 4656 ba5a 65ac2fc9d990 4 5005 c">
-                 </div>
-                 </div>`
-                 return html
-    } else {
-      let html = `<div class="message">
-                 <div class="upper-message">
-                 <div class="upper-message__user-name">
-                  ${message.name}
-                 </div>
-                 <div class="upper-message__date">
-                  ${message.created_at}
-                 </div>
-                 </div>
-                 <div class="lower-message">
-                 <p class="lower-message__content">
-                  ${message.content}
-                 </p>
-                 </div>
-                 </div>`
-                 return html
+    var image = message.image ? `<img class="lower-message__image" src=${message.image}>` : ``
+
+    let html = `<div class="message">
+                <div class="upper-message">
+                <div class="upper-message__user-name">
+                ${message.name}
+                </div>
+                <div class="upper-message__date">
+                ${message.created_at}
+                </div>
+                </div>
+                <div class="lower-message">
+                <p class="lower-message__content">
+                ${message.content}
+                </p>
+                ${image}
+                </div>
+                </div>`;
+      return html
     }
-  }
+    
   $('#new_message').on('submit',function(e){
     e.preventDefault();
     let formData = new FormData(this);
