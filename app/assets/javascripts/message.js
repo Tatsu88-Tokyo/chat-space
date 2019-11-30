@@ -1,9 +1,35 @@
 $(function(){
+  
+  let reloadMessages = function(){
+    if (location.href.match(/\/groups\/\d+\/messages/)){
+      last_message_id = $('.message:last').data('message-id');
+    $.ajax({
+      url:'api/messages',
+      type:'get',
+      dataType:'json',
+      data: {id: last_message_id}
+    })
+
+    .done(function (messages){
+      let insertHTML = '';
+      messages.forEach(function (message){
+      insertHTML = buildHTML(message);
+      $('.messages').append(insertHTML);
+      })
+      $('.messages').animate({scrollTop: $('.messages')[0].scrollHeight});
+     })
+     .fail(function(){
+      alert('自動更新,失敗')
+     });
+    }
+  };
+
+  setInterval(reloadMessages, 5000);
 
   function buildHTML(message){
-    var image = message.image ? `<img class="lower-message__image" src=${message.image}>` : ``
+    let image = message.image ? `<img class="lower-message__image" src=${message.image}>` : ``
 
-    let html = `<div class="message">
+    let html = `<div class="message" data-message-id = ${message.id}>
                 <div class="upper-message">
                 <div class="upper-message__user-name">
                 ${message.name}

@@ -7,7 +7,7 @@
         Member:
         %li.member-list__member
           - @members.each do |member|
-            %li= member.name
+            %li.member-list__member= member.name
     .contents__edit
       = link_to 'Edit',edit_group_path(@group),class: "edit"
   .contents__messages
