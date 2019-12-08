@@ -9,14 +9,13 @@ $(function(){
       dataType:'json',
       data: {id: last_message_id}
     })
-
     .done(function (messages){
       let insertHTML = '';
       messages.forEach(function (message){
       insertHTML = buildHTML(message);
       $('.messages').append(insertHTML);
       })
-      $('.messages').animate({scrollTop: $('.messages')[0].scrollHeight});
+      $('.contents__messages').animate({scrollTop: $('.messages')[0].scrollHeight});
      })
      .fail(function(){
       alert('自動更新,失敗')
